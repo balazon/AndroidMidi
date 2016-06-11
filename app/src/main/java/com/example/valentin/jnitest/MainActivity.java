@@ -60,13 +60,29 @@ public class MainActivity extends AppCompatActivity implements MidiDriver.OnMidi
 		    }
 	    });
 
-        midi = new MidiDriver();
-        if(midi.start()) {
-	        Log.d("ERR", "START FAIL");
-        }
     }
 
-    @Override
+	@Override
+	protected void onStart() {
+		super.onStart();
+		midi = new MidiDriver();
+		if(!midi.start()) {
+			Log.e("MIDI", "midi FAIL");
+		}
+	}
+
+	@Override
+	protected void onStop() {
+		super.onStop();
+		if(midi != null) {
+			midi.stop();
+			midi = null;
+		}
+	}
+
+
+
+	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
