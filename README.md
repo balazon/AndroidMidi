@@ -14,3 +14,4 @@ configured for the new AndroidStudio preview version.
 
 This project was tested on a Sony Xperia Z1 Compact device.
 
+![alt tag](https://cloud.githubusercontent.com/assets/3685997/15986352/78ab92ee-3006-11e6-8e82-1f6bfcb169f0.png)
